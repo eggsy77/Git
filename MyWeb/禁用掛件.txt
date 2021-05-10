@@ -1,0 +1,24 @@
+      <script>
+      document.oncontextmenu = function (){
+      return false;
+      }
+      </script>
+上面放在style之前，禁右鍵
+<script>
+
+          document.body.onkeydown = function(e){
+          var keyCode = e.keyCode || e.which || e.charCode;
+          var ctrlKey = e.ctrlKey || e.metaKey;
+          if(ctrlKey && (keyCode == 83 || keyCode == 85 || keyCode == 73)) {
+          e.preventDefault();
+          return false;
+          }else if(keyCode && keyCode == 123){
+          return false;
+          }
+          }
+        </script>
+        <noscript><p style="font-size:70px;">對不起，你的瀏覽器不支持或禁用了JavaScript，無法正常使用此網站</p></noscript>
+        
+        <noscript><body style="display:none"></body></noscript>
+
+上面放在/footer之前，禁沒js和f12
